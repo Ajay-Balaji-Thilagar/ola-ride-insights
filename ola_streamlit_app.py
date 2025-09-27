@@ -77,7 +77,7 @@ st.markdown("**Interactive analytics for OLA ride-sharing data**", unsafe_allow_
 
 # Connect to SQLite database
 try:
-    conn = sqlite3.connect('A:/ajay/Labmentix_Internship/OLA_Project_7/ola_database.db')
+    conn = sqlite3.connect('ola_database.db')
 except Exception as e:
     st.error(f"Database connection failed: {e}")
     st.stop()
