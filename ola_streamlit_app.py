@@ -77,14 +77,14 @@ st.markdown("**Interactive analytics for OLA ride-sharing data**", unsafe_allow_
 
 # Connect to SQLite database
 try:
-    conn = sqlite3.connect('A:/ajay/Labmentix_Internship/OLA_Project_7/ola_database.db')
+    conn = sqlite3.connect('ola_database.db')
 except Exception as e:
     st.error(f"Database connection failed: {e}")
     st.stop()
 
 # Read SQL queries from file
 try:
-    with open('A:/ajay/Labmentix_Internship/OLA_Project_7/ola_queries.sql', 'r') as file:
+    with open('ola_queries.sql', 'r') as file:
         queries = file.read().split(';')
         queries = [q.strip() for q in queries if q.strip()]  # Remove empty queries
 except Exception as e:
