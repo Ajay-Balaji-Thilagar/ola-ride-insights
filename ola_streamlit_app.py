@@ -84,7 +84,7 @@ except Exception as e:
 
 # Read SQL queries from file
 try:
-    with open('A:/ajay/Labmentix_Internship/OLA_Project_7/ola_queries.sql', 'r') as file:
+    with open('ola_queries.sql', 'r') as file:
         queries = file.read().split(';')
         queries = [q.strip() for q in queries if q.strip()]  # Remove empty queries
 except Exception as e:
@@ -118,6 +118,10 @@ if query_index < len(queries):
         df = pd.read_sql_query(query, conn)
         st.markdown(f"**Query {query_index + 1}: {insight}**", unsafe_allow_html=True)
         st.dataframe(df, use_container_width=True)
+        st.markdown("### OLA Power BI Dashboard", unsafe_allow_html=True)
+        st.image('d1.png', caption='Dashboard Image 1', use_column_width=True)
+        st.image('d2.png', caption='Dashboard Image 2', use_column_width=True)
+        st.image('d3.png', caption='Dashboard Image 3', use_column_width=True)
     except Exception as e:
         st.error(f"Query execution failed: {e}")
 else:
